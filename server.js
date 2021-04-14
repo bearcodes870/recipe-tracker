@@ -14,3 +14,9 @@ app.use(express.static(path.join(_dirname, 'build')));
 app.get('/*', function(req, res) {
     res.sendFile(path.join(_dirname, 'build', 'index.html'));
 });
+
+const port = process.env.PORT || 3001;
+
+app.listen(port, function() {
+    console.log(`Express app running on port ${port}`)
+});
